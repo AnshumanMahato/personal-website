@@ -17,7 +17,7 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-function useMounted() {
+export function useMounted() {
   return useSyncExternalStore(
     () => () => {},
     () => true,

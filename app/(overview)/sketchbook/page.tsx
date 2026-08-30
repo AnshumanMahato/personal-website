@@ -1,10 +1,10 @@
 import PageHeading from "@/app/components/PageHeading";
 import PageBanner from "@/app/components/PageBanner";
 import Section from "@/app/components/Section";
+import Gallery from "@/app/components/Gallery";
 import { Metadata } from "next";
 import { addSketchbookJsonLd } from "@/app/utils/seo/addSketchbookJsonLd";
 import profile from "@/app/lib/profile.json";
-import Image from "next/image";
 import GoogleAnalytics from "@/app/components/GoogleAnalytics";
 import artworks from "@/app/lib/artworks.json";
 
@@ -47,18 +47,7 @@ function About() {
         </div>
       </Section>
       <div> </div>
-      <div className="columns-xs gap-[1rem] col-span-full">
-        {artworks.map((artwork) => (
-          <Image
-            key={artwork.filename}
-            src={`/assets/art/${artwork.filename}`}
-            width={artwork.dimensions.width}
-            height={artwork.dimensions.height}
-            alt={artwork.alt}
-            className=" mb-[1rem]"
-          />
-        ))}
-      </div>
+      <Gallery images={artworks} />
       <script
         id="sketchbook-json-ld"
         type="application/ld+json"

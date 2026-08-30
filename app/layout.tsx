@@ -41,6 +41,7 @@ export default function RootLayout({ children }: LayoutProps) {
             <Footer />
             <DarkModeSwitch />
           </div>
+          <div id="portal-root"></div>
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
